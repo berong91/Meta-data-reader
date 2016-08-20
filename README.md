@@ -1,4 +1,2 @@
-# django-practice 
-## Travis [![Build Status](https://travis-ci.org/berong91/django-practice.svg?branch=dev)](https://travis-ci.org/berong91/django-practice) 
-## Drone [![Build Status](https://drone.io/github.com/berong91/django-practice/status.png)](https://drone.io/github.com/berong91/django-practice/latest)
-A simple django app
+# django-practice [![Build Status](https://travis-ci.org/berong91/django-practice.svg?branch=dev)](https://travis-ci.org/berong91/django-practice) [![Build Status](https://drone.io/github.com/berong91/django-practice/status.png)](https://drone.io/github.com/berong91/django-practice/latest)
+django-practice is a django simple web-app that auto detects thread meta-data files and generates a view on a web.
