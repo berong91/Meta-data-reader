@@ -1,0 +1,18 @@
+# * mysite
+# * berong91
+# * https://github.com/berong91/django-practice
+
+sudo: false
+language: python
+cache: pip
+
+python:
+  - "2.7"
+
+install:
+  - pip install -U pip wheel setuptools
+  - pip install -q Django==1.8
+
+script:
+  - python manage.py check
+  - python manage.py test
