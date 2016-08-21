@@ -10,6 +10,10 @@ from meta_reader.models import Source
 
 
 def index(request):
+    """
+    Return the records table
+    :HttpResponse: Http Response message
+    """
     data_path = os.path.abspath("data/")
     
     file_list = []
@@ -33,9 +37,9 @@ def index(request):
         if created:
             source.save()
         else:
-            message = r"%s<br/>%s<br/>%s" % (source.source_name,
-                                            source.date_added.strftime('%b %d, %Y %H:%M:%S'),
-                                            source.date_modified.strftime('%b %d, %Y %H:%M:%S'))
+            message = r"{0}<br/>{1}<br/>{2}".format(source.source_name,
+                                                    source.date_added.strftime('%b %d, %Y %H:%M:%S'),
+                                                    source.date_modified.strftime('%b %d, %Y %H:%M:%S'))
             return HttpResponse(message)
         
         with open(file_path, 'r') as data_file:
