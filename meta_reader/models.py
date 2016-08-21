@@ -42,16 +42,16 @@ class Record(models.Model):
     """
     Define a record attribute
     """
-    source = models.ForeignKey(Source, on_delete=models.CASCADE)  # reference source file
-    date = models.DateTimeField('date published', primary_key=True)  # date of a record
-    filename = models.CharField(max_length=255, primary_key=True)  # file name of record
+    source = models.ForeignKey(  # reference source file
+        Source,
+        on_delete=models.CASCADE
+    )
+    date = models.DateTimeField('date published')  # date of a record
+    filename = models.CharField(max_length=255)  # file name of record
     action = models.CharField(max_length=50)  # action, may need to re-define later
-    submit_type = models.CharField(max_length=50)  # submit type of a record
     rating = models.CharField(max_length=16, choices=EVENT_TYPES, default=MALICIOUS)  # rating type, defined above
+    submit_type = models.CharField(max_length=50)  # submit type of a record
     
     @property
     def colour(self):
-        """
-        Return the hexadecimal colour of this rating
-        """
-        self.COLOUR[self.ratingType]
+        return self.COLOUR[self.rating]
