@@ -3,14 +3,13 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-
 class Source(models.Model):
     """
     Define a source file attribute
     """
     source_name = models.CharField(max_length=255, primary_key=True)  # the file name of a source
-    date = models.DateTimeField('date added')  # the detected date
-    modified_date = models.DateTimeField('date modified')  # the modified date (replaced)
+    date_added = models.DateTimeField('date added')  # the detected date
+    date_modified = models.DateTimeField('date modified')  # the modified date (replaced)
 
 
 class Record(models.Model):
