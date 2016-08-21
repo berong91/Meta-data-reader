@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meta-data reader</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Meta-data table</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Source</th>
+            <th>Date</th>
+            <th>FileName</th>
+            <th>Action</th>
+            <th>Rating</th>
+            <th>Submit type</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for record in records %}
+            <tr class="{{ record.colour }}">
+                <td>{{ record.id }}</td>
+                <td>{{ record.source_id }}</td>
+                <td>{{ record.date }}</td>
+                <td>{{ record.filename }}</td>
+                <td>{{ record.action }}</td>
+                <td>{{ record.rating }}</td>
+                <td>{{ record.submit_type }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2>Source List</h2>
+    {{ status | safe }}
+</div>
+
+
+</body>
+</html>

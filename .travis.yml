@@ -5,14 +5,15 @@
 sudo: false
 language: python
 cache: pip
-
 python:
   - "2.7"
-
+env:
+  - DJANGO=1.8
 install:
-  - pip install -U pip wheel setuptools
-  - pip install -q Django==1.8
-
+  - pip install -q -U pip wheel setuptools coveralls
+  - pip install -q Django==$DJANGO
 script:
-  - python manage.py check
   - python manage.py test
+  - python manage.py test meta_reader
+  - coverage run --source=meta_reader manage.py test meta_reader
+after_success: coveralls
