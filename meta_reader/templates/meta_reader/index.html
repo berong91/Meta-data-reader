@@ -6,13 +6,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'meta_reader/css/style.css' %}"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'meta_reader/js/script.js' %}"></script>
 </head>
 <body>
 <div class="container">
-    <h2>Meta-data table</h2>
-    <table class="table">
+    <div class="jumbotron">
+        <h1>META-READER</h1>
+        <img class="left-block" id="banner" src="{% static 'meta_reader/img/maxresdefault.jpg' %}" alt="Source from www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ"/>
+        <p>Meta-reader table is a python app that populates data to the web view. The application scans the data folder
+            (/data) and loads them into the database (SQLite). Then it populates data to the web view.</p>
+    </div>
+    <table class="table table-bordered">
         <thead>
         <tr>
             <th>ID</th>
@@ -40,8 +49,7 @@
     </table>
     <h2>Source List</h2>
     {{ status | safe }}
-</div>
-
+</div><!-- /.container -->
 
 </body>
 </html>
