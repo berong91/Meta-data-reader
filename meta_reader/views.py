@@ -11,7 +11,6 @@ from meta_reader.models import Source
 
 def index(request):
     data_path = os.path.abspath("data/")
-    # file_list = [f for f in listdir(data_path)  if isfile(path)]
     
     file_list = []
     for f in listdir(data_path):
