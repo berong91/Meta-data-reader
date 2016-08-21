@@ -4,7 +4,7 @@
     "filename": "virus.exe",
     "action": "files-deleted",
     "submit-type": "FG300B3910602113/root",
-    "rating": "high-risk"
+    "rating": "clean"
   },
   {
     "date": "Jan 1, 2015 13:12:59",
@@ -12,5 +12,12 @@
     "action": "files-added",
     "submit-type": "FG300B3910602113/root",
     "rating": "malicious"
+  },
+  {
+    "date": "Aug 21, 2018 13:45:00",
+    "filename": "test.exe",
+    "action": "files-added",
+    "submit-type": "FG3asB3910602113/user",
+    "rating": "medium-risk"
   }
 ]

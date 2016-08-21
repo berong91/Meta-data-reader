@@ -10,6 +10,13 @@ class Source(models.Model):
     source_name = models.CharField(max_length=255, primary_key=True)  # the file name of a source
     date_added = models.DateTimeField('date added')  # the detected date
     date_modified = models.DateTimeField('date modified')  # the modified date (replaced)
+    
+    def __unicode__(self):
+        return u'Source: {0}, added {1}, last modified {2}'.format(
+            self.source_name,
+            self.date_added,
+            self.date_modified
+        )
 
 
 class Record(models.Model):
@@ -32,11 +39,11 @@ class Record(models.Model):
     
     # map ratings to colours
     COLOUR = {
-        CLEAN: "66ff33",
-        LOW: "FF6A00",
-        MEDIUM: "FF0000",
-        HIGH: "FFE800",
-        MALICIOUS: "999966",
+        CLEAN: "active",
+        LOW: "info",
+        MEDIUM: "warning",
+        HIGH: "danger",
+        MALICIOUS: "success",
     }
     
     """
@@ -55,3 +62,12 @@ class Record(models.Model):
     @property
     def colour(self):
         return self.COLOUR[self.rating]
+    
+    def __unicode__(self):
+        return u'{0} - Threat level {1}, action {2} (Published at {3} by {4})'.format(
+            self.filename,
+            self.rating,
+            self.action,
+            self.date,
+            self.submit_type
+        )
