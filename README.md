@@ -35,6 +35,7 @@ The project is currently setup in two main branches.
 - [x] Well looking Web UI
 - [ ] Trigger reloading from server-side
 - [ ] Sort data from browser
+- [ ] Auto script to reload the list of sources on homepage
 - [ ] Setup script
 
 # Credits
