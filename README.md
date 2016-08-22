@@ -19,8 +19,13 @@ The project is currently setup in two main branches.
 ## Easy installation
 1. Clone the git: `git clone https://github.com/berong91/django-practice`
 2. Go into the new directory: `cd django-practice`
-3. Run `pip install --upgrade -r requirements.txt`  
-    This will install the app and all stuff that is needed to run it
+3. Run `pip install --upgrade -r requirements.txt`, this will install the app and all library that is needed to run it
+    
+Please choose to (w)ipe if you are asked for this
+````
+The plan is to install the git repository https://github.com/XXXXXXXXXXXXXXXXXXXXXXXXXX
+What to do?  (i)gnore, (w)ipe, (b)ackup
+````
 4. Run `python manage.py runserver`  
     After you are done following it this will start the app.
 5. Open the app on browser `http://127.0.0.1:8000`
