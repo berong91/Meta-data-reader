@@ -2,8 +2,12 @@
 [![Code Issues](https://www.quantifiedcode.com/api/v1/project/aaa830e2a8a148ce8a86200796335430/badge.svg)](https://www.quantifiedcode.com/app/project/aaa830e2a8a148ce8a86200796335430)
 [![Build Status](https://travis-ci.org/berong91/django-practice.svg?branch=master)](https://travis-ci.org/berong91/django-practice)
 
-# Description
+## Description
 Meta-data Reader is a django simple web-app that auto detects thread meta-data files and generates a view on a web.
+
+The project is currently setup in two main branches. 
+- `dev` - This is where the latest features are
+- `master` The app is stable on this branch
 
 # Installation
 
@@ -21,3 +25,17 @@ Meta-data Reader is a django simple web-app that auto detects thread meta-data f
     After you are done following it this will start the app.
 5. Open the app on browser `http://127.0.0.1:8000`
 6. Copy new data to folder `django-practice\data\` for testing purpose. Enjoy.
+
+# Features
+- [x] Read and Validate AJAX file
+- [x] Detect changes in data folder
+- [x] Rendering data into HTML table
+- [x] Populate data based on the record's threat level 
+- [x] Auto reload data on web browser
+- [x] Well looking Web UI
+- [ ] Trigger reloading from server-side
+- [ ] Sort data from browser
+- [ ] Setup script
+
+# Credits
+- [Duy Pham](https://github.com/berong91) I did it again, oops
