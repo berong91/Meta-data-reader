@@ -14,6 +14,11 @@ from meta_reader.models import Source, Record
 
 
 def index(request):
+    """
+    Return the index page
+    :param request: HTTPRequest
+    :return: index page
+    """
     message = reload_sources()
     index_context = {
         'status': message,
@@ -23,6 +28,11 @@ def index(request):
 
 
 def update(request):
+    """
+    Get an updated list of records
+    :param request: HttpRequest
+    :return: List records in JSON
+    """
     reload_sources()
     
     records = Record.objects.all()
@@ -52,7 +62,7 @@ def reload_sources():
     tmp_lst = [x[0] for x in list_detected_sources]
     lst_all = Source.objects.all()
     
-    list_source_not_found = lst_all.exclude(source_name__in=tmp_lst)
+    list_source_not_found = lst_all.exclude(source_name__in=list(tmp_lst))
     list_source_not_found.delete()
     
     # Start to process each files in the data folder
