@@ -4,6 +4,8 @@ from os.path import isfile, join
 
 import pytz
 import simplejson
+from django.core import serializers
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.utils import timezone
 from django.utils.datetime_safe import datetime
@@ -18,6 +20,16 @@ def index(request):
         'records': Record.objects.all(),
     }
     return render(request, 'meta_reader/index.html', index_context)
+
+
+def update(request):
+    reload_sources()
+    
+    records = Record.objects.all()
+    
+    data = serializers.serialize('json', records)
+    
+    return JsonResponse(data, safe=False)
 
 
 def reload_sources():
