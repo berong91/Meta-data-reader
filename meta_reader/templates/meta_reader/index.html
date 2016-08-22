@@ -17,38 +17,42 @@
 <div class="container">
     <div class="jumbotron">
         <h1>META-READER</h1>
-        <img class="left-block" id="banner" src="{% static 'meta_reader/img/maxresdefault.jpg' %}" alt="Source from www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ"/>
+        <img class="left-block" id="banner" src="{% static 'meta_reader/img/maxresdefault.jpg' %}"
+             alt="Source from www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ"/>
         <p>Meta-reader table is a python app that populates data to the web view. The application scans the data folder
             (/data) and loads them into the database (SQLite). Then it populates data to the web view.</p>
     </div>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Source</th>
-            <th>Date</th>
-            <th>FileName</th>
-            <th>Action</th>
-            <th>Rating</th>
-            <th>Submit type</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for record in records %}
-            <tr class="{{ record.colour }}">
-                <td>{{ record.id }}</td>
-                <td>{{ record.source_id }}</td>
-                <td>{{ record.date }}</td>
-                <td>{{ record.filename }}</td>
-                <td>{{ record.action }}</td>
-                <td>{{ record.rating }}</td>
-                <td>{{ record.submit_type }}</td>
+    <div id="ajax-panel">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Source</th>
+                <th>Date</th>
+                <th>FileName</th>
+                <th>Action</th>
+                <th>Rating</th>
+                <th>Submit type</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for record in records %}
+                <tr class="{{ record.colour }}">
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.source_id }}</td>
+                    <td>{{ record.date }}</td>
+                    <td>{{ record.filename }}</td>
+                    <td>{{ record.action }}</td>
+                    <td>{{ record.rating }}</td>
+                    <td>{{ record.submit_type }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <h2>Source List</h2>
     {{ status | safe }}
+
 </div><!-- /.container -->
 
 </body>
