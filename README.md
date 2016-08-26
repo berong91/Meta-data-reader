@@ -48,7 +48,7 @@ The project is currently setup in two main branches.
 4. Run `python manage.py runserver`  
     After you are done following it this will start the app.
 5. Open the app on browser `http://127.0.0.1:8000`
-6. Copy new data to folder `django-practice\data\` for testing purpose. Enjoy.
+6. Copy new data to folder `Meta-data-reader\data\` for testing purpose. Enjoy.
 
 # Features
 - [x] Read and Validate AJAX file
