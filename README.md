@@ -57,9 +57,9 @@ The project is currently setup in two main branches.
 - [x] Populate data based on the record's threat level 
 - [x] Auto reload data on web browser
 - [x] Well looking Web UI
+- [x] Update list of sources on the browser
 - [ ] Implement database versioning for UI update 
 - [ ] Sort data output
-- [ ] Update list of sources on the browser
 - [ ] Update data folder from a concurrent thread or process
 - [ ] Setup script
 
