@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/django-practice.iml" filepath="$PROJECT_DIR$/.idea/django-practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Meta-data-reader.iml" filepath="$PROJECT_DIR$/.idea/Meta-data-reader.iml" />
     </modules>
   </component>
 </project>

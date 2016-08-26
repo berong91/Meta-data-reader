@@ -33,13 +33,18 @@ def update(request):
     :param request: HttpRequest
     :return: List records in JSON
     """
-    reload_sources()
+    message = reload_sources()
     
     records = Record.objects.all()
     
     data = serializers.serialize('json', records)
     
-    return JsonResponse(data, safe=False)
+    index_context = {
+        'status': message,
+        'records': data,
+    }
+    
+    return JsonResponse(index_context, safe=False)
 
 
 def reload_sources():
